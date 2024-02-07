@@ -3,7 +3,6 @@ using UnityEngine;
 public class Avoid : MonoBehaviour
 {
     public Rigidbody rb;
-
     public LayerMask layerMask;
     public float distance = 10f;
     

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SteeringBehaviours : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
 
     public GameObject prefab;
@@ -16,7 +16,7 @@ public class SteeringBehaviours : MonoBehaviour
     // Update is called once per frame
     public void SpawnObject()
     {
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 30; i++)
         {
             Instantiate(prefab);
         }

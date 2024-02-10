@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(SteeringBehaviours))]
+[CustomEditor(typeof(Spawner))]
 public class SpawnEditor : Editor
 {
     public override void OnInspectorGUI()
@@ -13,8 +13,8 @@ public class SpawnEditor : Editor
         if (GUILayout.Button("Spawn"))
         {
            
-            SteeringBehaviours spawnEditor;
-            spawnEditor = target as SteeringBehaviours;
+            Spawner spawnEditor;
+            spawnEditor = target as Spawner;
             if(spawnEditor != null)
             {
                 spawnEditor .SpawnObject();

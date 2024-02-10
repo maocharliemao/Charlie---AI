@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class Neighbours : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<GameObject> neighbours = new List<GameObject>();
+    
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (!other.isTrigger) 
+        {
+            if (!neighbours.Contains(other.gameObject))
+            {
+                neighbours.Add(other.gameObject);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit(Collider other)
     {
-        
+        if (!other.isTrigger) 
+        {
+            if (neighbours.Contains(other.gameObject))
+            {
+                neighbours.Remove(other.gameObject);
+            }
+        }
     }
 }

@@ -19,8 +19,10 @@ GameObject:
   - component: {fileID: 4148687060616291898}
   - component: {fileID: 4694070094627673940}
   - component: {fileID: 7107860571327395819}
-  - component: {fileID: 842739284526458388}
-  m_Layer: 6
+  - component: {fileID: 7015309957062991806}
+  - component: {fileID: 4123352676264302186}
+  - component: {fileID: 7396714810789093152}
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  speed: 40
+  speed: 20
 --- !u!114 &749426062939433667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,9 +201,9 @@ MonoBehaviour:
   rb: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   distance: 4
-  turnSpeed: 100
+  turnSpeed: 50
 --- !u!114 &4694070094627673940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,11 +237,37 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Radius: 10
+  m_Radius: 200
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &842739284526458388
+--- !u!114 &7015309957062991806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969367080862647187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35dc5b45a52e60240a888a1eb52c563d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cohesionStrength: 1
+--- !u!114 &4123352676264302186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969367080862647187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e22a45b25a56949a5e5e6de1ec26d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alignmentStrength: 1
+--- !u!114 &7396714810789093152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -251,8 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c83aa71e933a5f458ff390efdb3f095, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neighbours: []
-  detectionRange: 5
   detectionLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 128
+  neighbours: []
+  detectionRange: 100

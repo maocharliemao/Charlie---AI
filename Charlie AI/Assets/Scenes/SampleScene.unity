@@ -123,28 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &9323368 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7969367080862647187, guid: 988181944599a9744814a072b551d937, type: 3}
-  m_PrefabInstance: {fileID: 747016281}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &9323369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9323368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c83aa71e933a5f458ff390efdb3f095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  neighbours: []
-  detectionRange: 5
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!1 &52490033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,42 +1106,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4148687060616291898, guid: 988181944599a9744814a072b551d937, type: 3}
-      propertyPath: turnSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4221405152825976526, guid: 988181944599a9744814a072b551d937, type: 3}
+    - target: {fileID: 4123352676264302186, guid: 988181944599a9744814a072b551d937, type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4296638124364616360, guid: 988181944599a9744814a072b551d937, type: 3}
-      propertyPath: speed
-      value: 40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4694070094627673940, guid: 988181944599a9744814a072b551d937, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 4113798732688495358}
-    - target: {fileID: 7107860571327395819, guid: 988181944599a9744814a072b551d937, type: 3}
-      propertyPath: m_Radius
-      value: 10
+    - target: {fileID: 7015309957062991806, guid: 988181944599a9744814a072b551d937, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7969367080862647187, guid: 988181944599a9744814a072b551d937, type: 3}
       propertyPath: m_Name
       value: Capsule (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7969367080862647187, guid: 988181944599a9744814a072b551d937, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6394517800870136497, guid: 988181944599a9744814a072b551d937, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7969367080862647187, guid: 988181944599a9744814a072b551d937, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9323369}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 988181944599a9744814a072b551d937, type: 3}
 --- !u!1 &941263957
 GameObject:
@@ -1376,7 +1338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275785143}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

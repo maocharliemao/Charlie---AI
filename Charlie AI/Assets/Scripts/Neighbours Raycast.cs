@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class NeighboursRaycast : MonoBehaviour
 {
+    public LayerMask detectionLayer;
+
     public List<GameObject> neighbours = new List<GameObject>();
     public float detectionRange = 5f;
-    public LayerMask detectionLayer;
 
     void FixedUpdate()
     {

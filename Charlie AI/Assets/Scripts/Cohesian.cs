@@ -19,24 +19,28 @@ public class Cohesian : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 cohesionForce = CohesionForce(neighboursScript.neighbours);
+        
         rb.AddForce(cohesionForce * cohesionStrength);
     }
 
     Vector3 CohesionForce(List<GameObject> neighbors)
     {
-        Vector3 averageNeighborPosition = Vector3.zero;
-        int neighborCount = neighbors.Count;
+        Vector3 targetPosition = Vector3.zero;
+        Vector3 myPosition = transform.position;
+        
+        if (neighbors.Count == 0)
+            return Vector3.zero;
 
         foreach (GameObject neighbor in neighbors)
         {
-            averageNeighborPosition += neighbor.transform.position;
+            targetPosition += neighbor.transform.position;
         }
-
-        if (neighborCount > 0)
+    
+        if (neighbors.Count > 0)
         {
-            averageNeighborPosition /= neighborCount;
-            Vector3 cohesionDirection = (averageNeighborPosition - transform.position).normalized;
-            return cohesionDirection;
+            targetPosition /= neighbors.Count;
+            Vector3 directionTowardsTarget = (targetPosition - myPosition).normalized;
+            return directionTowardsTarget;
         }
 
         return Vector3.zero;

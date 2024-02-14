@@ -14,9 +14,8 @@ public class AIEyes : MonoBehaviour
      
             float spreadAngle = -maxAngle/(rays-1);
             Vector3 dir = Quaternion.Euler(0, i*spreadAngle, 0) * transform.forward;
-
-
             Debug.DrawRay(transform.position, dir * 20f, Color.yellow);
+            
         }
     }
 

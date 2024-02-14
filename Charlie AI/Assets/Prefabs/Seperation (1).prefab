@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 2037586262892692567}
   - component: {fileID: 4477720112416355423}
   - component: {fileID: 5472080314082890968}
-  - component: {fileID: 4115840581676690499}
   - component: {fileID: 47060496410182365}
-  m_Layer: 0
+  - component: {fileID: 8376658474384342293}
+  m_Layer: 7
   m_Name: Seperation (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,20 @@ MonoBehaviour:
     m_Bits: 192
   distance: 3
   turnSpeed: 50
---- !u!114 &4115840581676690499
+--- !u!114 &47060496410182365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6526414507931512089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec21c616c3c1d164b9b5668badb96c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seperationStrength: 10
+--- !u!114 &8376658474384342293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,17 +230,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   neighbours: []
-  detectionRange: 25
---- !u!114 &47060496410182365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6526414507931512089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec21c616c3c1d164b9b5668badb96c84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  seperationStrength: 100
+  detectionRange: 20

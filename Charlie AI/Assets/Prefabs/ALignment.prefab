@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e22a45b25a56949a5e5e6de1ec26d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alignmentStrength: 100
+  alignmentStrength: 10
 --- !u!114 &3289321121911133494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,4 +230,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   neighbours: []
-  detectionRange: 19
+  detectionRange: 15

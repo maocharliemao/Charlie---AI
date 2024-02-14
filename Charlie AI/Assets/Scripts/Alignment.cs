@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Alignmentt : MonoBehaviour
+public class Alignment : MonoBehaviour
 {
     public float alignmentStrength = 1.0f;
-
-
     private NeighboursRaycast neighboursScript;
 
     void Start()
@@ -23,27 +21,26 @@ public class Alignmentt : MonoBehaviour
         GetComponent<Rigidbody>().AddTorque(cross * alignmentStrength);
     }
 
-    public Vector3 AlignmentForce(List<GameObject> neighbors)
+    private Vector3 AlignmentForce(List<GameObject> neighbors)
     {
         if (neighbors.Count == 0)
             return Vector3.zero;
-        
+
         Vector3 alignmentMove = Vector3.zero;
-        
+
         foreach (GameObject neighbor in neighbors)
         {
-            Rigidbody neighborRigidbody = neighbor.GetComponent<Rigidbody>();
-            if (neighborRigidbody != null)
             {
-                alignmentMove += neighborRigidbody.velocity;
+                alignmentMove += neighbor.transform.forward;
             }
-            
-            alignmentMove /= neighbors.Count;
-        }
-        return Vector3.zero;
 
-        
-        //     Vector3 averageNeighborVelocity = Vector3.zero;
+        }
+
+        alignmentMove /= neighbors.Count;
+        return alignmentMove;
+    }
+
+    //     Vector3 averageNeighborVelocity = Vector3.zero;
         //     int neighborCount = neighbors.Count;
         //
         //     if (neighborCount > 0)
@@ -55,5 +52,5 @@ public class Alignmentt : MonoBehaviour
         //     }
         //
         //     return Vector3.zero;
-    }
+    
 }

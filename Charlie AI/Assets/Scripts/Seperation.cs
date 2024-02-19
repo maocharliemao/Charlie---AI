@@ -23,7 +23,7 @@ public class Seperation : MonoBehaviour
 
     Vector3 SeperationForce(List<GameObject> neighbors)
     {
-        Vector3 avoidMove = Vector3.zero;
+        Vector3 separationDirection = Vector3.zero;
         Vector3 myPosition = transform.position;
 
         if (neighbors.Count == 0)
@@ -32,15 +32,13 @@ public class Seperation : MonoBehaviour
 
         foreach (GameObject neighbor in neighbors)
         {
-            {
-                avoidMove += (transform.position - neighbor.transform.position).normalized;
-            }
+            Vector3 toNeighbor = myPosition - neighbor.transform.position;
+            separationDirection += toNeighbor.normalized / toNeighbor.magnitude; 
         }
-
-        avoidMove /= neighbors.Count;
-        return avoidMove;
-
-
+        
+        separationDirection /= neighbors.Count;
+        
+        return separationDirection.normalized;
 
     }
 

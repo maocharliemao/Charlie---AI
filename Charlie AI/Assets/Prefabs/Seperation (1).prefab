@@ -198,7 +198,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 192
+    m_Bits: 64
   distance: 3
   turnSpeed: 50
 --- !u!114 &47060496410182365
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec21c616c3c1d164b9b5668badb96c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seperationStrength: 10
+  seperationStrength: 4
 --- !u!114 &8376658474384342293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,4 +230,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   neighbours: []
-  detectionRange: 20
+  detectionRange: 10

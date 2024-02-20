@@ -5,8 +5,8 @@ using UnityEngine;
 public class AIEyes : MonoBehaviour
 {
     public int rays = 10;
-    public float maxAngle = 1f;
-    public float detectionRange = 20f;
+    public float maxAngle = 120f;
+    public float detectionRange = 4f;
     public LayerMask detectionLayer;
     public Avoid avoidScript;
 
@@ -30,7 +30,7 @@ public class AIEyes : MonoBehaviour
             if (Physics.Raycast(transform.position, dir, out hit, detectionRange, detectionLayer))
             {
                 detectedObjects.Add(hit.transform);
-                avoidScript.AvoidObstacle();
+                //avoidScript.AvoidObstacle(); // turn on if avoidScript is turned off
                 Debug.DrawRay(transform.position, dir * hit.distance, Color.red);
             }
             else

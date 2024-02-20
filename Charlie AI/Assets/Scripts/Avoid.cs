@@ -16,7 +16,7 @@ public class Avoid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        AvoidObstacle(); 
     }
 
 

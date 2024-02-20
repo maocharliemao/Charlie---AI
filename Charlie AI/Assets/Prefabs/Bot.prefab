@@ -18,7 +18,8 @@ GameObject:
   - component: {fileID: 1935315537048816977}
   - component: {fileID: 1349021151142528053}
   - component: {fileID: 2337423841795601838}
-  m_Layer: 0
+  - component: {fileID: 7509114114054919697}
+  m_Layer: 7
   m_Name: Bot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0
   rb: {fileID: 0}
-  speed: 20
+  speed: 5
 --- !u!114 &1349021151142528053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +200,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   distance: 3
-  turnSpeed: 50
+  turnSpeed: 10
 --- !u!114 &2337423841795601838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,11 +213,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e34fd76066e00642891c8bcef39ef7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rays: 10
-  maxAngle: 180
+  rays: 8
+  maxAngle: 120
   detectionRange: 4
   detectionLayer:
     serializedVersion: 2
     m_Bits: 128
   avoidScript: {fileID: 0}
   detectedObjects: []
+--- !u!114 &7509114114054919697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8661546899551721891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aeecf5130c63be4fb2c3fe92b601932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perceptionAmount: 0
+  aiEyes: {fileID: 0}
+  maxPerceptionDistance: 10
+  minPerceptionAmount: 0.1
+  maxPerceptionAmount: 1

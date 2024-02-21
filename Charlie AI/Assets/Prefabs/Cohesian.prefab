@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0
   rb: {fileID: 0}
-  speed: 20
+  speed: 5
 --- !u!114 &4500892283157380939
 MonoBehaviour:
   m_ObjectHideFlags: 0

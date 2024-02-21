@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Cohesian : MonoBehaviour
 {
-    public float cohesionStrength = 1.0f;
+    public float cohesionStrength = 10f;
 
     private Rigidbody rb;
     private NeighboursRaycast neighboursScript;

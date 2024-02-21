@@ -6,30 +6,40 @@ public class Perception : MonoBehaviour
 {
     public float perceptionAmount = 0f;
     public AIEyes aiEyes;
-    public float maxPerceptionDistance = 10f; 
-    public float minPerceptionAmount = 0.1f; 
-    public float maxPerceptionAmount = 1f;    
+    public float maxDistance = 10f;
+    public float minPerception = 0.1f;
+    public float maxPerception = 1f;
+
     private void Start()
     {
         aiEyes = GetComponent<AIEyes>();
     }
+
     void Update()
     {
         perceptionAmount = CalculatePerception();
     }
+
     float CalculatePerception()
     {
-        float closestDistance = float.MaxValue;
+        
+        float minDistance = float.MaxValue;
         
         foreach (Transform detectedObject in aiEyes.detectedObjects)
         {
             float distanceToDetected = Vector3.Distance(transform.position, detectedObject.position);
-            closestDistance = Mathf.Min(closestDistance, distanceToDetected);
+            minDistance = Mathf.Min(minDistance, distanceToDetected);
         }
-        float perception = 1f - Mathf.Clamp01(closestDistance / maxPerceptionDistance);
         
-        perception = Mathf.Lerp(minPerceptionAmount, maxPerceptionAmount, perception);
+        
+        float perception = 1f - Mathf.Clamp01(minDistance / maxDistance);
+        
+        perception = Mathf.Lerp(minPerception, maxPerception, perception);
         
         return perception;
     }
+
+
+
+
 }

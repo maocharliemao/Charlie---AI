@@ -33,6 +33,7 @@ public class NeighboursRaycast : MonoBehaviour
                     if (hit.collider.gameObject == detectedObject)
                     {
                         neighbours.Add(detectedObject);
+                        
                     }
                 }
             }

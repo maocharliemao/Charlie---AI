@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Perception : MonoBehaviour
+public class PerceptionRadius : MonoBehaviour
 {
-    public float perceptionAmount = 0f;
-    public AIEyes aiEyes;
+    public float perceptionRadius = 0f;
+    public NeighboursRaycast neighboursRaycast;
     public float maxDistance = 10f;
     public float minPerception = 0.1f;
     public float maxPerception = 1f;
 
     private void Start()
     {
-        aiEyes = GetComponent<AIEyes>();
+        neighboursRaycast = GetComponent<NeighboursRaycast>();
     }
 
     void Update()
     {
-        perceptionAmount = PerceptionRaycast();
+        perceptionRadius = PerceptionNeighbours();
     }
-
-    float PerceptionRaycast()
+    
+    float PerceptionNeighbours()
     {
         float minDistance = float.MaxValue;
         
-        foreach (Transform detectedObject in aiEyes.detectedObjects)
+        foreach (GameObject neighbours in neighboursRaycast.neighbours)
         {
-            float distanceToDetected = Vector3.Distance(transform.position, detectedObject.position);
+            float distanceToDetected = Vector3.Distance(transform.position, neighbours.transform.position);
             minDistance = Mathf.Min(minDistance, distanceToDetected);
         }
         
@@ -34,8 +34,4 @@ public class Perception : MonoBehaviour
         perception = Mathf.Lerp(minPerception, maxPerception, perception);
         return perception;
     }
-
-
-
-
 }

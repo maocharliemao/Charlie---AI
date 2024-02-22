@@ -26,19 +26,29 @@ public class Seperation : MonoBehaviour
         Vector3 separationDirection = Vector3.zero;
         Vector3 myPosition = transform.position;
 
+        
         if (neighbors.Count == 0)
             return Vector3.zero;
-        
 
         foreach (GameObject neighbor in neighbors)
         {
-            Vector3 toNeighbor = myPosition - neighbor.transform.position;
-            separationDirection += toNeighbor.normalized / toNeighbor.magnitude; 
+            
+            // subtract postion of object a from position of object b
+            Vector3 awayFromNeighbour = myPosition - neighbor.transform.position;
+            separationDirection += awayFromNeighbour;
+            
+            //  Vector3 normalizedDirection = awayFromNeighbour.normalized;
+            //  normalizedDirection = (myPosition - neighbor.transform.position).normalized;
+            // // separationDirection += toNeighbor.normalized / toNeighbor.magnitude; 
+        }
+
+        if (neighbors.Count > 0)
+        {
+            separationDirection /= neighbors.Count;
+            separationDirection = separationDirection.normalized;
         }
         
-        separationDirection /= neighbors.Count;
-        
-        return separationDirection.normalized;
+        return separationDirection;
 
     }
 

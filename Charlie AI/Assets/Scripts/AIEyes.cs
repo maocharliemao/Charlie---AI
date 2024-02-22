@@ -35,7 +35,7 @@ public class AIEyes : MonoBehaviour
             }
             else
             {
-                Debug.DrawRay(transform.position, dir * detectionRange, Color.yellow);
+                Debug.DrawRay(transform.position, dir * detectionRange, Color.green);
             }
         }
     }

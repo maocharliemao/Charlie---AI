@@ -34,6 +34,8 @@ public class Cohesian : MonoBehaviour
         foreach (GameObject neighbor in neighbors)
         {
             targetPosition += neighbor.transform.position;
+            
+            
         }
     
         if (neighbors.Count > 0)
